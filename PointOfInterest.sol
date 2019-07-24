@@ -128,6 +128,28 @@ contract PointOfInterestBase is AccessControl{
         string latitude ;
         string longitude;
     }
+    
+    struct Vertexe{
+        uint64 latitude;
+        uint64 longitude;
+    }
+    
+    struct Pointer{
+        Vertexe[] vertexes;
+        byte32 description;
+        uint256 birthBlock;
+        bool onSale;
+        uint256 price;
+        uint256 birthTime;
+    }
+    
+    Pointer[] pointers;
+    
+    function addPointer(uint64[] memory lats,uint64 memory lngs,byte32 calldata description) public returns(uint256){
+       //todo 生成兴趣点
+       //返回id
+    }
+    
 
     PointOfInterest[] pointOfInterests;
     mapping (uint256 => address) public pointOfInterestIndexToOwner;
